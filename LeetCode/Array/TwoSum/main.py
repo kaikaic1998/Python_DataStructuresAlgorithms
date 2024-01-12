@@ -1,9 +1,10 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        seen = {}
-        for i, value in enumerate(nums):
-            comp = target - value
-            if comp in seen:
-                return [i, seen[comp]]
-            else:
-                seen[value] = i
+        map = {}
+        result = []
+        for i, num in enumerate(nums):
+            comp = target - num
+            if comp in map:
+                return[map[comp], i]
+            map[num] = i
+        return result
